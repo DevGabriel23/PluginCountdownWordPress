@@ -15,6 +15,23 @@
  */
 
 /*** Countdown Timer  ***/
+
+include 'connect.php';
+$con = connect_db();
+$result = get_data($con);
+//$result = mysqli_query($con,"SELECT * FROM `plugin-countdown`");
+while($res = mysqli_fetch_array($result)){
+    $datetime = $res['datetime'];
+    $h = $res['hours'];
+    $m = $res['minutes'];
+    $s = $res['sec'];
+}
+
+//se supone que es la fecha guardada en la base de datos a la que se realiza el conteo
+
+// $date = date($datetime); 
+// $time = date($h+':'+$m+':'+$s);
+
 $date = date('2022-08-09');
 $time = date('13:16:00');
 $date_today = $date . ' ' . $time;
@@ -45,5 +62,13 @@ echo "it will run until " .$date_today;
     }, 1000);
 </script>
 <?php
-echo '<p id="demo" style="font-size:30px;"></p>'
+    //Se debe guardar la nueva fecha en la base de datos 
+    $date = date('2022-08-14');
+    $h = 2;
+    $m = 30;
+    $s = 24;
+    insert($con, $date, $d, $h, $m, $s);
+
+
+    echo '<p id="demo" style="font-size:30px;"></p>'
 ?>
