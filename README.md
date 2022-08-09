@@ -13,10 +13,10 @@ Thanks goes to these wonderful people
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/alejandromotadev"><img src="https://avatars.githubusercontent.com/u/107156668?s=400&u=5f5b53ba1b2817ea15dab8a98c71d8114c5e5382&v=4" width="100px;" alt="Alejandro Mota"/><br /><sub><b>Alejandro Mota</b></sub></a><br /><a>💻</a></td>
+    <td align="center"><a href="https://github.com/alejandromotadev"><img src="https://avatars.githubusercontent.com/u/107156668?v=4" width="100px;" alt="Alejandro Mota"/><br /><sub><b>Alejandro Mota</b></sub></a><br /><a>💻</a></td>
     <td align="center"><a href="https://github.com/Gabriel-Ramon"><img src="https://avatars.githubusercontent.com/u/103237220?v=4" width="100px;" alt="Gabriel Ramon"/><br /><sub><b>Gabriel Ramon</b></sub></a><br /><a>💻</a></td>
         <td align="center"><a href="https://github.com/CesarSanchezdev"><img src="https://avatars.githubusercontent.com/u/110840112?v=4" width="100px;" alt="Cesar Sanchez"/><br /><sub><b>Cesar Sanchez</b></sub></a><br /><a>💻</a></td>
-            <td align="center"><a href="https://github.com/Gabriel-Ramon"><img src="https://avatars.githubusercontent.com/u/103237220?v=4" width="100px;" alt="Marisol Solis"/><br /><sub><b>Marisol Solis</b></sub></a><br /><a>💻</a></td>
+            <td align="center"><a href="https://github.com/marisolis"><img src="https://avatars.githubusercontent.com/u/110839185?v=4" width="100px;" alt="Marisol Solis"/><br /><sub><b>Marisol Solis</b></sub></a><br /><a>💻</a></td>
   </tr>
 </table>
 
