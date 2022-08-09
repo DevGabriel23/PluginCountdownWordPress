@@ -5,7 +5,7 @@ hasta una fecha agregada por el propio usuario
 ## Documentation
 You can find our documentation on our [Drive](https://drive.google.com/drive/u/2/folders/1cUdb39DSAFEZmSnMARXeDhJWAdFjkjZV)
 
-## Contributors ✨
+## Developers ✨
 
 Thanks goes to these wonderful people
 
