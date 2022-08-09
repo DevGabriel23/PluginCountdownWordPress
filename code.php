@@ -15,8 +15,8 @@
  */
 
 /*** Countdown Timer  ***/
-$date = date('2022-08-28');
-$time = date('16:00:00');
+$date = date('2022-08-09');
+$time = date('13:16:00');
 $date_today = $date . ' ' . $time;
 echo "it will run until " .$date_today;
 ?>
@@ -34,8 +34,9 @@ echo "it will run until " .$date_today;
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        // SECONDS: var seconds = Math.floor((distance % (1000 * 60))/1000);
         //Output results
-        document.getElementById("demo").innerHTML = days + "D " + hours + "H " + minutes + "M";
+        document.getElementById("demo").innerHTML = days + "D " + hours + "H " + minutes + "M " /*+ seconds + "S"*/;
         //if the count down over
         if (distance < 0) {
             clearInterval(x);
@@ -46,4 +47,3 @@ echo "it will run until " .$date_today;
 <?php
 echo '<p id="demo" style="font-size:30px;"></p>'
 ?>
-
