@@ -1,6 +1,4 @@
-Se muestra el desarrollo de un plugin para WordPress que añade 
-la funcionalidad de mostrar una cuenta regresiva en días, horas y minutos
-hasta una fecha agregada por el propio usuario 
+It shows the development of a plugin for WordPress that adds the functionality of showing a countdown in days, hours and minutes to a date added by the user himself
  
 ## Documentation
 You can find our documentation on our [Drive](https://drive.google.com/drive/u/2/folders/1cUdb39DSAFEZmSnMARXeDhJWAdFjkjZV)
