@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name
  *
@@ -13,18 +14,36 @@
  * Version:           1.0.0
  */
 
-/*** Countdown Timer Shortcode ***/
-date_default_timezone_set('America/Mexico_City');
-
-//localtime();
-
-$date = strtotime("August 28, 2022 4:00 PM");
-$remaining = $date - time();
-
-$days_remaining = floor($remaining / 86400);
-$hours_remaining = floor(($remaining % 86400) / 3600);
-$minutes_remaining = floor(($remaining % 3600) / 60);
-
-echo "There are $days_remaining days and $hours_remaining hours and $minutes_remaining minutes left";
+/*** Countdown Timer  ***/
+$date = date('2022-08-28');
+$time = date('16:00:00');
+$date_today = $date . ' ' . $time;
+echo "it will run until " .$date_today;
+?>
+<script type="text/javascript">
+    //set date we are counting down to
+    var count_id = "<?php echo $date_today; ?>";
+    var countDownDate = new Date(count_id).getTime();
+    //update the count down every 1 second
+    var x = setInterval(function() {
+        //get today date and time
+        var now = new Date().getTime();
+        //find distance between today and the count down date
+        var distance = countDownDate - now;
+        //calculate time
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        //Output results
+        document.getElementById("demo").innerHTML = days + "D " + hours + "H " + minutes + "M";
+        //if the count down over
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+<?php
+echo '<p id="demo" style="font-size:30px;"></p>'
 ?>
 
