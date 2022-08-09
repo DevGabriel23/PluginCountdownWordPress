@@ -14,22 +14,17 @@
  */
 
 /*** Countdown Timer Shortcode ***/
-$day = localtime();
+date_default_timezone_set('America/Mexico_City');
 
-$waiting_day = 1660056724;
-$time_left = $waiting_day - time();
+//localtime();
 
-$days = floor($time_left / (60*60*24));
-$time_left %= (60 * 60 * 24);
+$date = strtotime("August 28, 2022 4:00 PM");
+$remaining = $date - time();
 
-$hours = floor($time_left / (60 * 60));
-$time_left %= (60 * 60);
+$days_remaining = floor($remaining / 86400);
+$hours_remaining = floor(($remaining % 86400) / 3600);
+$minutes_remaining = floor(($remaining % 3600) / 60);
 
-$min = floor($time_left / 60);
-$time_left %= 60;
-
-$sec = $time_left;
-
-echo "DAY: $day[3]";
-echo "Remaing time: $days days and $hours hours and $min min and $sec sec left";
+echo "There are $days_remaining days and $hours_remaining hours and $minutes_remaining minutes left";
 ?>
+
