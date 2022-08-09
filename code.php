@@ -29,11 +29,11 @@ while($res = mysqli_fetch_array($result)){
 
 //se supone que es la fecha guardada en la base de datos a la que se realiza el conteo
 
-// $date = date($datetime); 
-// $time = date($h+':'+$m+':'+$s);
+$date = date($datetime); 
+$time = date($h.':'.$m.':'.$s);
 
-$date = date('2022-08-09');
-$time = date('13:16:00');
+// $date = date('2022-08-09');
+// $time = date('13:16:00');
 $date_today = $date . ' ' . $time;
 echo "it will run until " .$date_today;
 ?>
@@ -67,7 +67,7 @@ echo "it will run until " .$date_today;
     $h = 2;
     $m = 30;
     $s = 24;
-    insert($con, $date, $d, $h, $m, $s);
+    insert($con, $date, $h, $m, $s);
 
 
     echo '<p id="demo" style="font-size:30px;"></p>'
