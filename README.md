@@ -1,11 +1,19 @@
+
 It shows the development of a plugin for WordPress that adds the functionality of showing a countdown in days, hours and minutes to a date added by the user himself
  
 ## Documentation
-You can find our documentation on our [Drive](https://drive.google.com/drive/u/2/folders/1cUdb39DSAFEZmSnMARXeDhJWAdFjkjZV)
+You can find our documentation in our [Drive](https://drive.google.com/drive/u/2/folders/1cUdb39DSAFEZmSnMARXeDhJWAdFjkjZV)
+
+## How to use
+Step 1 -Add the Shortcode block to the website</br>
+Step 2 -After adding the shortcode, enter our shortcode in the block settings</br>
+Step 3 -Type ['countdown date="yyyy-mm-dd" time="HR:MM:SS"]</br>
+Note: The time format is declared as 24 hrs, if the time parameter is not specified, take the default value (12:00:00)
+
 
 ## Developers ✨
 
-Thanks goes to these wonderful people
+Our acknowledgements go to these wonderful people
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -24,3 +32,4 @@ Thanks goes to these wonderful people
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Thanks
+
