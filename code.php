@@ -27,8 +27,6 @@ while($res = mysqli_fetch_array($result)){
     $s = $res['sec'];
 }
 
-//se supone que es la fecha guardada en la base de datos a la que se realiza el conteo
-
 $date = date($datetime); 
 $time = date($h.':'.$m.':'.$s);
 
@@ -62,7 +60,7 @@ echo "it will run until " .$date_today;
     }, 1000);
 </script>
 <?php
-    //Se debe guardar la nueva fecha en la base de datos 
+    //save new date into db 
     $date = date('2022-08-14');
     $h = 2;
     $m = 30;
