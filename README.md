@@ -2,7 +2,7 @@
 It shows the development of a plugin for WordPress that adds the functionality of showing a countdown in days, hours and minutes to a date added by the user himself
  
 ## Documentation
-You can find our documentation on our [Drive](https://drive.google.com/drive/u/2/folders/1cUdb39DSAFEZmSnMARXeDhJWAdFjkjZV)
+You can find our documentation in our [Drive](https://drive.google.com/drive/u/2/folders/1cUdb39DSAFEZmSnMARXeDhJWAdFjkjZV)
 
 ## How to use
 Step 1 -Add the Shortcode block to the website</br>
