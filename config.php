@@ -15,7 +15,7 @@
         if(!$result){
             die("Query failed: " . mysqli_error($con));
         }else{
-            echo("Query successful");
+            echo "<script>console.log('Query successful')</script>";
         }
         return $result;
     }
@@ -31,9 +31,10 @@
         if($date != $datetime || $h != $hour || $m != $minute || $s != $second){
             $result = mysqli_query($con,"INSERT INTO `plugin-countdown` (hours,minutes,sec,datetime) VALUES ('$h','$m','$s','$date')");
             if(!$result){
-                echo "Not updated ". mysqli_error($con);
+                $error = mysqli_error($con);
+                echo "<script>console.log('Not updated '+'.(string)$error'.)</script>";
             }else{
-                echo "Timer updated";
+                echo "<script>console.log('Timer updated')</script>";
             }
         }
     }

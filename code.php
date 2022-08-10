@@ -24,8 +24,13 @@
             ),
             $atts
         );
-
-        $date = date($atts['date']);
+        //create a DateTime object
+        $datetime = new DateTime($atts['date']);
+        $date = $datetime->format('Y-m-d'); //format DateTime object to 'yyyy-mm-dd'
+        $dateArray = explode("-",$date);
+        $year = $dateArray[0]; 
+        $month = $dateArray[1]; 
+        $day = $dateArray[2];  
         $time = date($atts['time']);
         $timeArray = explode(":",$time); 
         $h = $timeArray[0];
@@ -33,8 +38,24 @@
         $s = $timeArray[2];
         
         $con = connect_db();
-        insert($con, $date, $h, $m, $s);
-        
+        if (checkdate((int) $month, (int)$day, (int)$year)) { //Valid date 
+            if ((int)$h < 24 && (int)$h >= 0) {
+                if ((int)$m < 60 && (int)$m >= 0) {
+                    if ((int)$s < 60 && (int)$s >= 0) {
+                        insert($con, $date, $h, $m, $s);
+                    } else {
+                        echo "<script>console.log('Valor inválido para segundos')</script>";
+                    }
+                } else {
+                    echo "<script>console.log('Valor inválido para minutos')</script>";
+                }
+            } else {
+                echo "<script>console.log('Valor inválido para horas')</script>";
+            }
+        }else{
+            echo "<script>console.log('Valor inválido para fecha')</script>";
+        }
+
         $result = get_data($con);
         while($res = mysqli_fetch_array($result)){
             $datetime = $res['datetime'];
