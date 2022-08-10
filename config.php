@@ -20,15 +20,34 @@
         return $result;
     }
 
-    function insert($con, $date, $h, $m, $s){
-        $result = mysqli_query($con, "UPDATE `plugin-countdown` SET datetime='$date' WHERE id=1");
-        $result = mysqli_query($con, "UPDATE `plugin-countdown` SET hours='$h' WHERE id=1");
-        $result = mysqli_query($con, "UPDATE `plugin-countdown` SET minutes='$m' WHERE id=1");
-        $result = mysqli_query($con, "UPDATE `plugin-countdown` SET sec='$s' WHERE id=1");	
-        echo "Timer updated";
+    // function insert($con, $date, $h, $m, $s){
+    //     $result = mysqli_query($con, "UPDATE `plugin-countdown` SET datetime='$date' WHERE id=1");
+    //     $result = mysqli_query($con, "UPDATE `plugin-countdown` SET hours='$h' WHERE id=1");
+    //     $result = mysqli_query($con, "UPDATE `plugin-countdown` SET minutes='$m' WHERE id=1");
+    //     $result = mysqli_query($con, "UPDATE `plugin-countdown` SET sec='$s' WHERE id=1");	
+    //     echo "Timer updated";
             
-    }
+    // }
 
+    
+    function insert($con, $date, $h, $m, $s){
+        $consult = get_data($con);
+        while($res = mysqli_fetch_array($consult)){
+            $datetime = $res['datetime'];
+            $hour = $res['hours'];
+            $minute = $res['minutes'];
+            $second = $res['sec'];
+        }
+        if($date != $datetime || $h != $hour || $m != $minute || $s != $second){
+            $result = mysqli_query($con,"INSERT INTO `plugin-countdown` (hours,minutes,sec,datetime) VALUES ('$h','$m','$s','$date')");
+            if(!$result){
+                echo "Not updated ". mysqli_error($con);
+            }else{
+                echo "Timer updated";
+            }
+        }
+
+    }
 
 
 ?>
