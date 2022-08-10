@@ -16,7 +16,7 @@
 
 /*** Countdown Timer  ***/
 
-include 'connect.php';
+include 'config.php';
 $con = connect_db();
 $result = get_data($con);
 //$result = mysqli_query($con,"SELECT * FROM `plugin-countdown`");
@@ -39,19 +39,19 @@ echo "it will run until " .$date_today;
 ?>
 <script type="text/javascript">
     //set date we are counting down to
-    var count_id = "<?php echo $date_today; ?>";
-    var countDownDate = new Date(count_id).getTime();
+    let count_id = "<?php echo $date_today; ?>";
+    let countDownDate = new Date(count_id).getTime();
     //update the count down every 1 second
-    var x = setInterval(function() {
+    let x = setInterval(function() {
         //get today date and time
-        var now = new Date().getTime();
+        let now = new Date().getTime();
         //find distance between today and the count down date
-        var distance = countDownDate - now;
+        let distance = countDownDate - now;
         //calculate time
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60))/1000);
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60))/1000);
         //Output results
         document.getElementById("demo").innerHTML = days + "D " + hours + "H " + minutes + "M " + seconds + "S";
         //if the count down over
