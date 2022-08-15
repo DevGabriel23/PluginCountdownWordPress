@@ -21,6 +21,7 @@
             array(
                 'date' => '',
                 'time' => '12:00:00',
+                'msg' => 'Countdown Expired',
             ),
             $atts
         );
@@ -36,6 +37,7 @@
         $h = $timeArray[0];
         $m = $timeArray[1];
         $s = $timeArray[2];
+        $pExpired = $atts['msg'];
         
         $con = connect_db();
         if (checkdate((int) $month, (int)$day, (int)$year)) { //Valid date 
@@ -117,17 +119,14 @@
             //if the count down over
             if (Math.floor(distance / 1000) < 0) {
                 clearInterval(x);
-                document.getElementById("strDaysCountdownPlugin").innerHTML = "";
-                document.getElementById("dpuntos").innerHTML = "";
-                document.getElementById("strHoursCountdownPlugin").innerHTML = "COUNTDOWN";
-                document.getElementById("hpuntos").innerHTML = "";    
-                document.getElementById("strMinutesCountdownPlugin").innerHTML = "EXPIRED";
-                document.getElementById("mpuntos").innerHTML = "";
-                document.getElementById("strSecondsCountdownPlugin").innerHTML = "";
+                document.getElementById("countdownPlugin").style = "display: none";
+                document.getElementById("fraseCountdownPlugin").style = "background-color:#D9D9D9;text-align: center; align-content: center;display:block";
+                document.getElementById("countdownPluginExpired").innerHTML = "'.$pExpired.'";
+                
             }
         }, 1000);
         </script>
-        <div style="background-color:#D9D9D9;text-align: center; align-content: center; display: grid; grid-template-columns: repeat(7, 1fr);">
+        <div id="countdownPlugin" style="background-color:#D9D9D9;text-align: center; align-content: center; display: grid; grid-template-columns: repeat(7, 1fr);">
             <p id="strDaysCountdownPlugin" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
             <p id="dpuntos" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
             <p id="strHoursCountdownPlugin" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
@@ -135,8 +134,10 @@
             <p id="strMinutesCountdownPlugin" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
             <p id="mpuntos" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
             <p id="strSecondsCountdownPlugin" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
+        </div>
+        <div id="fraseCountdownPlugin" style="background-color:#D9D9D9;text-align: center; align-content: center;display:none;">
+            <p style="font-size:30px;padding: 20px 20px 20px 20px;" id="countdownPluginExpired"></p>
         </div>';
-
         return $result;
     });
 ?>
