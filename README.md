@@ -10,14 +10,6 @@ Step 2 -After adding the shortcode, enter our shortcode in the block settings</b
 Step 3 -Type [countdown date="yyyy-mm-dd" time="HR:MM:SS" msg="text"]</br>
 Note: The time format is declared as 24 hrs, if the time parameter is not specified, take the default value (12:00:00) also if the msg parameter is not specified, take the default value ("Countdown Expired")
 
-
-## How to use
-Step 1 -Add the Shortcode block to the website</br>
-Step 2 -After adding the shortcode, you can simply enter our shortcode in the block settings</br>
-Step 3 -Type ['countdown date="yyyy-mm-dd" time="HR:MM:SS"]</br>
-Note: The time format is declared as 24 hrs, if the time parameter is not specified took the default value (12:00:00)
-
-
 ## Developers ✨
 
 Our acknowledgements go to these wonderful people
