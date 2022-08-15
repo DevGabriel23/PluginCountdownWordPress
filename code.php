@@ -21,6 +21,7 @@
             array(
                 'date' => '',
                 'time' => '12:00:00',
+                'msg' => 'Countdown Expired',
             ),
             $atts
         );
@@ -36,6 +37,7 @@
         $h = $timeArray[0];
         $m = $timeArray[1];
         $s = $timeArray[2];
+        $pExpired = $atts['msg'];
         
         $con = connect_db();
         if (checkdate((int) $month, (int)$day, (int)$year)) { //Valid date 
@@ -75,7 +77,7 @@
             let count_id ="'.$date_today.'";
             let countDownDate = new Date(count_id).getTime();
             //update the count down every 1 second
-            let strDays, strHours, strMinutes, strSeconds,countdown;
+            let strDaysCountdownPlugin, strHoursCountdownPlugin, strMinutesCountdownPlugin, strSecondsCountdownPlugin;
             let x = setInterval(function() {
             //get today date and time
             let now = new Date().getTime();
@@ -88,55 +90,54 @@
             let seconds = Math.floor((distance % (1000 * 60)) / 1000);
             //Output results
             if (days < 10) {
-                strDays = "0" + days;
+                strDaysCountdownPlugin = "0" + days;
             } else {
-                strDays = days;
+                strDaysCountdownPlugin = days;
             }
             if (hours < 10) {
-                strHours = "0" + hours;
+                strHoursCountdownPlugin = "0" + hours;
             } else {
-                strHours = hours
+                strHoursCountdownPlugin = hours
             }
             if (minutes < 10) {
-                strMinutes = "0" + minutes;
+                strMinutesCountdownPlugin = "0" + minutes;
             } else {
-                strMinutes = minutes;
+                strMinutesCountdownPlugin = minutes;
             }
             if (seconds < 10) {
-                strSeconds = "0" + seconds;
+                strSecondsCountdownPlugin = "0" + seconds;
             } else {
-                strSeconds = seconds;
+                strSecondsCountdownPlugin = seconds;
             }
-            document.getElementById("d").innerHTML = strDays + "<br>Days";
+            document.getElementById("strDaysCountdownPlugin").innerHTML = strDaysCountdownPlugin + "<br>Days";
             document.getElementById("dpuntos").innerHTML = ":";
-            document.getElementById("h").innerHTML = strHours + "<br>Hours";
+            document.getElementById("strHoursCountdownPlugin").innerHTML = strHoursCountdownPlugin + "<br>Hours";
             document.getElementById("hpuntos").innerHTML = ":";
-            document.getElementById("m").innerHTML = strMinutes + "<br>Minutes";
+            document.getElementById("strMinutesCountdownPlugin").innerHTML = strMinutesCountdownPlugin + "<br>Minutes";
             document.getElementById("mpuntos").innerHTML = ":";
-            document.getElementById("s").innerHTML = strSeconds + "<br>Seconds";
+            document.getElementById("strSecondsCountdownPlugin").innerHTML = strSecondsCountdownPlugin + "<br>Seconds";
             //if the count down over
             if (Math.floor(distance / 1000) < 0) {
                 clearInterval(x);
-                document.getElementById("d").innerHTML = "";
-                document.getElementById("dpuntos").innerHTML = "";
-                document.getElementById("h").innerHTML = "COUNTDOWN";
-                document.getElementById("hpuntos").innerHTML = "";    
-                document.getElementById("m").innerHTML = "EXPIRED";
-                document.getElementById("mpuntos").innerHTML = "";
-                document.getElementById("s").innerHTML = "";
+                document.getElementById("countdownPlugin").style = "display: none";
+                document.getElementById("fraseCountdownPlugin").style = "background-color:#D9D9D9;text-align: center; align-content: center;display:block";
+                document.getElementById("countdownPluginExpired").innerHTML = "'.$pExpired.'";
+                
             }
         }, 1000);
         </script>
-        <div style="background-color:#D9D9D9;text-align: center; align-content: center; display: grid; grid-template-columns: repeat(7, 1fr);">
-            <p id="d" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
+        <div id="countdownPlugin" style="background-color:#D9D9D9;text-align: center; align-content: center; display: grid; grid-template-columns: repeat(7, 1fr);">
+            <p id="strDaysCountdownPlugin" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
             <p id="dpuntos" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
-            <p id="h" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
+            <p id="strHoursCountdownPlugin" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
             <p id="hpuntos" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
-            <p id="m" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
+            <p id="strMinutesCountdownPlugin" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
             <p id="mpuntos" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
-            <p id="s" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
+            <p id="strSecondsCountdownPlugin" style="font-size:30px;padding: 10px 20px 10px 20px;"></p>
+        </div>
+        <div id="fraseCountdownPlugin" style="background-color:#D9D9D9;text-align: center; align-content: center;display:none;">
+            <p style="font-size:30px;padding: 20px 20px 20px 20px;" id="countdownPluginExpired"></p>
         </div>';
-
         return $result;
     });
 ?>
