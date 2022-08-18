@@ -10,7 +10,7 @@
     }
 
     function get_data($con){
-        $query = "SELECT * FROM `plugin-countdown`";
+        $query = "SELECT * FROM `plugin-countdown` ORDER by ID DESC";
         $result = mysqli_query($con, $query);
         if(!$result){
             die("Query failed: " . mysqli_error($con));
